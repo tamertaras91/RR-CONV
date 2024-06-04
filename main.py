@@ -1,3 +1,4 @@
+print('Importing libraries.....')
 import argparse
 import numpy as np
 from pprint import pprint
@@ -48,6 +49,7 @@ elif act_function=='Sigmoid':
     act=nn.Sigmoid()
 act_0= nn.LeakyReLU(negative_slope=0.2)
 
+print("Downloading Dataset.......")
 dst = dataset_class("~/.torch", download=True)
 tp = transforms.Compose([
     transforms.Resize(32),
