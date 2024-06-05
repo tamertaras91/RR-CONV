@@ -10,11 +10,11 @@ We present an efficient approach to reconstructing accuratly training examples f
 
 Given that typical networks use convolutional layers followed by fully connected (FC) layers, we start by constructing the first fully connected layer.
 1. **Reconstructing FC Layer Input**:
-    - We reconstruct the input to the first FC layer as follows: for each point \( x_n \), we divide one of the corresponding gradient weights by the gradient bias for any connected node to this input: $   x_n = \frac{\partial \ell}{\partial w_{nm}} \bigg/ \frac{\partial \ell}{\partial b_m}
-    $
-    - Additionally, we compute the gradient with respect to the input of the FC layer. For each point \( x_n \), we multiply the corresponding gradient bias by the corresponding weight for each connected node:$
+    - We reconstruct the input to the first FC layer as follows: for each point \( x_n \), we divide one of the corresponding gradient weights by the gradient bias for any connected node to this input: $$   x_n = \frac{\partial \ell}{\partial w_{nm}} \bigg/ \frac{\partial \ell}{\partial b_m}
+    $$
+    - Additionally, we compute the gradient with respect to the input of the FC layer. For each point \( x_n \), we multiply the corresponding gradient bias by the corresponding weight for each connected node:$$
     \frac{\partial \ell}{\partial x_n} = \frac{\partial \ell}{\partial b_m} \times w_{nm}
-    $
+    $$
     - We then sum all these gradients to get the final gradient with respect to this point:
     $
     \frac{\partial \ell}{\partial x_n} = \sum_{c=1}^{C} \frac{\partial \ell}{\partial x_n}
