@@ -25,7 +25,8 @@ Given that typical networks use convolutional layers followed by fully connected
     $$\frac{\partial\ell}{\partial O}=\frac{\partial\ell}{\partial X}\times A’(O)$$
     - You can find a table of the derivatives of the most common activation functions provided in the paper.
 3. **Reconstructing convloutinal Layer Input**:
-    - Using the gradients w.r.t the output of the convolutional layer that we constructed, we can reconstruct the input of the layer using the weight gradients. Each weight gradient is a function of some input points and their corresponding output gradient points. for instant:$$\frac{\partial \ell}{\partial w_{d,i}}=\frac{\partial \ell}{\partial o_{d,1}}\times x[r[1]] +\frac{\partial \ell}{\partial o_{d,2}}\times x[r[2]]+\dots+\frac{\partial \ell}{\partial o_{d,m}}\times x[r[m]]$$
+    - Using the gradients w.r.t the output of the convolutional layer that we constructed, we can reconstruct the input of the layer using the weight gradients. Each weight gradient is a function of some input points and their corresponding output gradient points. for instant:  
+    $$\frac{\partial \ell}{\partial w_{d,i}}=\frac{\partial \ell}{\partial o_{d,1}}\times x[r[1]] +\frac{\partial \ell}{\partial o_{d,2}}\times x[r[2]]+\dots+\frac{\partial \ell}{\partial o_{d,m}}\times x[r[m]]$$
     - If the layer has enough filters, we can construct a set of linear equations enabling the reconstruction of the input.
     - This process can be applied iteratively for all layers until we reconstruct the input of the first layer.  
     
