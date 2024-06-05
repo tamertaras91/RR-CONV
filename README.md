@@ -20,8 +20,8 @@ Given that typical networks use convolutional layers followed by fully connected
     \frac{\partial \ell}{\partial x_n} = \sum_{c=1}^{C} \frac{\partial \ell}{\partial x_n}
     $
  <br>   
-**Key Success Factor**:<br>
-    - The success of our approach hinges on using the reconstructed input to propagate the computed gradient through the activation function.
+    **Key Success Factor**:<br>
+        - The success of our approach hinges on using the reconstructed input to propagate the computed gradient through the activation function.
 2. **Propagating Gradients**:
     - Given that common activation functions, like sigmoid, tanh, and ReLU, have well-defined mathematical expressions for their derivatives. These derivatives can be calculated efficiently using the activation function's output value (the input that we have constructed),we can construct the gradient w.r.t the ouptut of the previous layer (convloutional layer) through the chain rule:$    \frac{\partial\ell}{\partial O} =  \frac{\partial\ell}{\partial X}\times A’(O) $<br>
     (you can find a table of derivative of most common activation function provided in the paper)
@@ -29,7 +29,7 @@ Given that typical networks use convolutional layers followed by fully connected
 3. **Reconstructing convloutinal Layer Input**:
     - Using the gradients w.r.t the ouptput of the convloutional layer that we constructed, we can reconstruct the input of the previous layer using the weight gradients. As each weight gradient is a function of some input points and some output gradients points. for instant:<br> $    \frac{\partial \ell}{\partial w_{d,i}}= \frac{\partial \ell}{\partial o_{d,1}}\times x[r[1]] +\frac{\partial \ell}{\partial o_{d,2}}\times x[r[2]]+\dots+\frac{\partial \ell}{\partial o_{d,m}}\times x[r[m]]  $
     - If the layer has enough filters, we can have a set of linear equations enabling the reconstruction of the input.<br>
-    - This methodology highlights the innovative steps we take to leverage gradient information and activation functions to reconstruct inputs in convolutional layers, significantly enhancing the effectiveness of gradient-based data leakage attacks.
+This methodology highlights the innovative steps we take to leverage gradient information and activation functions to reconstruct inputs in convolutional layers, significantly enhancing the effectiveness of gradient-based data leakage attacks.
 
 ## Google Colab
 We provide Open [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1JNDLk53NWFdQHV20S_oHfcLPVyo4jNYB?usp=sharing)
