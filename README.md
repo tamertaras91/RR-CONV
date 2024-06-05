@@ -11,20 +11,20 @@ We present an efficient approach to reconstructing accuratly training examples f
 Given that typical networks use convolutional layers followed by fully connected (FC) layers, we start by constructing the first fully connected layer.
 1. **Reconstructing FC Layer Input**:
     - We reconstruct the input to the first FC layer as follows: for each point \( x_n \), we divide one of the corresponding gradient weights by the gradient bias for any connected node to this input:
-    $x_n = \frac{\partial \ell}{\partial w_{nm}} \bigg/ \frac{\partial \ell}{\partial b_m}$
+    $x_n=\frac{\partial \ell}{\partial w_{nm}}/ \frac{\partial \ell}{\partial b_m}$
     - Additionally, we compute the gradient with respect to the input of the FC layer. For each point \( x_n \), we multiply the corresponding gradient bias by the corresponding weight for each connected node:
-    $\frac{\partial \ell}{\partial x_n} = \frac{\partial \ell}{\partial b_m} \times w_{nm}$
+    $\frac{\partial \ell}{\partial x_n}=\frac{\partial \ell}{\partial b_m}\times w_{nm}$
     - We then sum all these gradients to get the final gradient with respect to this point:
-    $\frac{\partial \ell}{\partial x_n} = \sum_{c=1}^{C} \frac{\partial \ell}{\partial x_n}$
+    $\frac{\partial \ell}{\partial x_n}=\sum_{c=1}^{C}\frac{\partial \ell}{\partial x_n}$
     <br>
-    - **Key Success Factor**:
+    - **Key Success Factor**:<br>
         - The success of our approach hinges on using the reconstructed input to propagate the computed gradient through the activation function.
 2. **Propagating Gradients**:
-    - Given that common activation functions, like sigmoid, tanh, and ReLU, have well-defined mathematical expressions for their derivatives. These derivatives can be calculated efficiently using the activation function's output value (the input that we have constructed),we can construct the gradient w.r.t the ouptut of the previous layer (convloutional layer) through the chain rule:$\frac{\partial\ell}{\partial O} =  \frac{\partial\ell}{\partial X}\times A’(O)$<br>
+    - Given that common activation functions, like sigmoid, tanh, and ReLU, have well-defined mathematical expressions for their derivatives. These derivatives can be calculated efficiently using the activation function's output value (the input that we have constructed),we can construct the gradient w.r.t the ouptut of the previous layer (convloutional layer) through the chain rule:$\frac{\partial\ell}{\partial O}=\frac{\partial\ell}{\partial X}\times A’(O)$<br>
     (you can find a table of derivative of most common activation function provided in the paper)
    
 3. **Reconstructing convloutinal Layer Input**:
-    - Using the gradients w.r.t the ouptput of the convloutional layer that we constructed, we can reconstruct the input of the previous layer using the weight gradients. As each weight gradient is a function of some input points and some output gradients points. for instant:<br> $\frac{\partial \ell}{\partial w_{d,i}}= \frac{\partial \ell}{\partial o_{d,1}}\times x[r[1]] +\frac{\partial \ell}{\partial o_{d,2}}\times x[r[2]]+\dots+\frac{\partial \ell}{\partial o_{d,m}}\times x[r[m]]$
+    - Using the gradients w.r.t the ouptput of the convloutional layer that we constructed, we can reconstruct the input of the previous layer using the weight gradients. As each weight gradient is a function of some input points and some output gradients points. for instant:<br> $\frac{\partial \ell}{\partial w_{d,i}}=\frac{\partial \ell}{\partial o_{d,1}}\times x[r[1]] +\frac{\partial \ell}{\partial o_{d,2}}\times x[r[2]]+\dots+\frac{\partial \ell}{\partial o_{d,m}}\times x[r[m]]$
     - If the layer has enough filters, we can have a set of linear equations enabling the reconstruction of the input.<br>
 This methodology highlights the innovative steps we take to leverage gradient information and activation functions to reconstruct inputs in convolutional layers, significantly enhancing the effectiveness of gradient-based data leakage attacks.
 
