@@ -15,12 +15,14 @@ Given that typical networks use convolutional layers followed by fully connected
     $x_n=\frac{\partial \ell}{\partial w_{nm}}/ \frac{\partial \ell}{\partial b_m}$
     - Additionally, we compute the gradient with respect to the input of the FC layer. For each point \( x_n \), we multiply the corresponding gradient bias by the corresponding weight for each connected node:
     $\frac{\partial \ell}{\partial x_n}=\frac{\partial \ell}{\partial b_m}\times w_{nm}$
-    - We then sum all these gradients to get the final gradient with respect to this point:$$\frac{\partial \ell}{\partial x_n}=\sum_{c=1}^{C}\frac{\partial \ell}{\partial x_n}$$
-    - **Key Success Factor**:<br>
+    - We then sum all these gradients to get the final gradient with respect to this point:  
+    $$\frac{\partial \ell}{\partial x_n}=\sum_{c=1}^{C}\frac{\partial \ell}{\partial x_n}$$
+    - **Key Success Factor**:
         - The success of our approach hinges on using the reconstructed input to propagate the computed gradient through the activation function.
 2. **Propagating Gradients**:
     - Common activation functions,(e.g. sigmoid, tanh, ReLU,LeakyReLU,...) have well-defined mathematical expressions for their derivatives. These derivatives can be efficiently calculated using the activation function's output value (the input that we have constructed).
-    - Using the chain rule, we can construct the gradient with respect to the output of the previous layer (convolutional layer):$$\frac{\partial\ell}{\partial O}=\frac{\partial\ell}{\partial X}\times A’(O)$$
+    - Using the chain rule, we can construct the gradient with respect to the output of the previous layer (convolutional layer):
+    $$\frac{\partial\ell}{\partial O}=\frac{\partial\ell}{\partial X}\times A’(O)$$
     - You can find a table of the derivatives of the most common activation functions provided in the paper.
 3. **Reconstructing convloutinal Layer Input**:
     - Using the gradients w.r.t the output of the convolutional layer that we constructed, we can reconstruct the input of the layer using the weight gradients. Each weight gradient is a function of some input points and their corresponding output gradient points. for instant:$$\frac{\partial \ell}{\partial w_{d,i}}=\frac{\partial \ell}{\partial o_{d,1}}\times x[r[1]] +\frac{\partial \ell}{\partial o_{d,2}}\times x[r[2]]+\dots+\frac{\partial \ell}{\partial o_{d,m}}\times x[r[m]]$$
@@ -56,7 +58,7 @@ Under the folder **Various_setting** you can find different notebooks for variou
 4. **LetNet-4-Relu**: The architecture of LetNet using the ReLU function between the four convolution layers.<br>
 5. **LetNet-All-Relu**: The architecture of LetNet using the ReLU function between all the layers except the output layer. By using ReLU in the first layer, it requires a much larger number of filters as the gradient constraints are less in the first layer where the input channels are only 3.<br>
 
-## Intense Testing
+## Testing
 
 Under the folder **Testing** you can find three different notebooks. Each notebook runs the script over the first 100 images of a specific dataset.
 
