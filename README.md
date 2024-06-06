@@ -31,9 +31,10 @@ Given that typical networks use convolutional layers followed by fully connected
     - This process can be applied iteratively for all layers until we reconstruct the input of the first layer.  
     
 This methodology highlights the innovative steps we take to leverage gradient information and activation functions to reconstruct inputs in convolutional layers, significantly enhancing the effectiveness of gradient-based data leakage attacks.
-## Google Colab
-We provide Open [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1JNDLk53NWFdQHV20S_oHfcLPVyo4jNYB?usp=sharing)
-for quick reproduction.
+## Notebooks
+- Under the folders **Various_settings**, and **Testing** you can find ready-to-use notebooks for quick testing as well as the results from our previous runs.
+
+
 ## Usage
 You can run the script through:
 ```bash
