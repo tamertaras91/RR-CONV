@@ -1,6 +1,35 @@
 ## Project Title
 R-CONV: An Analytical Approach for Efficient Data
 Reconstruction via Convolutional Gradients
+## Citation
+If you find our work useful please give credit to the related published paper:
+Eltaras, T.A., Malluhi, Q., Savino, A., Carlo, S.D., Qayyum, A. (2025). R-CONV: An Analytical Approach for Efficient Data Reconstruction via Convolutional Gradients. In: Barhamgi, M., Wang, H., Wang, X. (eds) Web Information Systems Engineering – WISE 2024. WISE 2024. Lecture Notes in Computer Science, vol 15440. Springer, Singapore. https://doi.org/10.1007/978-981-96-0576-7_21
+
+```
+@InProceedings{10.1007/978-981-96-0576-7_21,
+author="Eltaras, Tamer Ahmed
+and Malluhi, Qutaibah
+and Savino, Alessandro
+and Carlo, Stefano Di
+and Qayyum, Adnan",
+editor="Barhamgi, Mahmoud
+and Wang, Hua
+and Wang, Xin",
+title="R-CONV: An Analytical Approach for Efficient Data Reconstruction via Convolutional Gradients",
+booktitle="Web Information Systems Engineering -- WISE 2024",
+year="2025",
+publisher="Springer Nature Singapore",
+address="Singapore",
+pages="271--285",
+isbn="978-981-96-0576-7"
+}
+```
+## Fundings
+This study is partially supported by:
+* the “COLTRANE-V” project - funded by the Ministero dell’Universit` a e della Ricerca within the PRIN 2022 program (D.D.104 - 02/02/2022).
+* SERICS project (PE00000014) under the MUR National Recovery and Resilience Plan funded by the European Union - NextGenerationEU.
+This work reflects only the authors’ views and opinions, and the funding bodies cannot be considered responsible for them.
+
 ## Description
 This project contains our paper's code implementations and experiments on advanced gradient-based data leakage methods on convolutional layers. <br>
 
