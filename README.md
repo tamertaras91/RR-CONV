@@ -3,6 +3,7 @@ R-CONV: An Analytical Approach for Efficient Data
 Reconstruction via Convolutional Gradients
 ## Citation
 If you find our work useful please give credit to the related published paper:
+
 Eltaras, T.A., Malluhi, Q., Savino, A., Carlo, S.D., Qayyum, A. (2025). R-CONV: An Analytical Approach for Efficient Data Reconstruction via Convolutional Gradients. In: Barhamgi, M., Wang, H., Wang, X. (eds) Web Information Systems Engineering – WISE 2024. WISE 2024. Lecture Notes in Computer Science, vol 15440. Springer, Singapore. https://doi.org/10.1007/978-981-96-0576-7_21
 
 ```
@@ -24,6 +25,24 @@ pages="271--285",
 isbn="978-981-96-0576-7"
 }
 ```
+
+Ahmed Eltaras, T., Malluhi, Q., Savino, A. et al. R-CONV++: uncovering privacy vulnerabilities through analytical gradient inversion attacks. Computing 107, 156 (2025). https://doi.org/10.1007/s00607-025-01508-w
+```
+@article{Eltaras2025,
+  author    = {Tamer Ahmed Eltaras and Qutaibah Malluhi and Alessandro Savino and Stefano Di Carlo and Adnan Qayyum},
+  title     = {R-CONV++: uncovering privacy vulnerabilities through analytical gradient inversion attacks},
+  journal   = {Computing},
+  volume    = {107},
+  number    = {7},
+  pages     = {156},
+  year      = {2025},
+  doi       = {10.1007/s00607-025-01508-w},
+  url       = {https://doi.org/10.1007/s00607-025-01508-w},
+  issn      = {1436-5057},
+  abstract  = {Federated learning has emerged as a prominent privacy-preserving technique... [truncated for brevity]},
+}
+```
+
 ## Fundings
 This study is partially supported by:
 * the “COLTRANE-V” project - funded by the Ministero dell’Universit` a e della Ricerca within the PRIN 2022 program (D.D.104 - 02/02/2022).
